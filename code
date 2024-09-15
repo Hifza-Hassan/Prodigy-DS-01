@@ -1,0 +1,25 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+data = {'Age': [23, 45, 30, 24, 35, 45, 28, 29, 40, 50],
+        'Gender': ['Male', 'Female', 'Male', 'Female', 'Male', 'Male', 'Female', 'Male', 'Female', 'Female']}
+df = pd.DataFrame(data)
+# Bar chart for gender distribution
+sns.countplot(x='Gender', data=df)
+plt.title('Gender Distribution')
+plt.xlabel('Gender')
+plt.ylabel('Count')
+plt.show()
+# Histogram for age distribution
+plt.hist(df['Age'], bins=5, color='blue', edgecolor='black')
+plt.title('Age Distribution')
+plt.xlabel('Age')
+plt.ylabel('Frequency')
+plt.show()
+plt.hist(df['Age'], bins=5, color='green', edgecolor='black')
+plt.title('Age Distribution')
+plt.xlabel('Age (years)')
+plt.ylabel('Number of People')
+plt.grid(True)
+plt.show()
+plt.savefig('age_distribution.png')
